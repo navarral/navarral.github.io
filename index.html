@@ -51,13 +51,17 @@ body {
   border-left-width: .25rem;
   border-radius: .25rem;
 }
-
+.bd-callout-info {
+  border-left-color: #2e86c1 ;
+  border-left-width: 0.5rem;
+}
 .bd-callout-info { @include bs-callout-variant($bd-info); }
+
 
 </style>
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="assets/main.css" />
+  <link rel="stylesheet" href="assets/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
        
@@ -94,8 +98,8 @@ body {
   
     
 		<section id="profile" >
-		<h2 class="text-primary">Professional Profile</h2>
-			A PhD student in Computer Science specialized in facilitating the linkage between health and environmental data and the publication of research data as open as possible for researchers using Semantic Web.
+			<h2 class="text-primary">Professional Profile</h2>
+					A PhD student in Computer Science specialized in facilitating the linkage between health and environmental data and the publication of research data as open as possible for researchers using Semantic Web.
 		</section>
 		
 		<section id="interests">
@@ -118,6 +122,7 @@ body {
 		
 		<section id="expertise" >
 			<h2 class="text-primary"> 2. Expertise<a href="#expertise"></a></h2>
+			<div class="bd-callout bd-callout-info">
 				<b>PhD Researcher in the ADAPT Centre, Trinity College Dublin (2019 – Present)</b>
 				<p> </p>
 HELICAL – Data Science challenge in rare autoimmune diseases | Funding Scheme: MSCA-ITN-ETN – European Training networks | Grant agreement ID: 813545 | Call: H2020-MSCA-ITN-2018 | Budget of € 4.050.338,40 | Period 2019-2022
@@ -126,7 +131,9 @@ HELICAL – Data Science challenge in rare autoimmune diseases | Funding Scheme:
 					<li>Patient-environmental data linkage open data publication support for rare chronic diseases ensuring good data protection practices.</li>
 					<li>Public engagement activities for patient support groups and general public.</li>
 				</ul>
-
+			</div>
+			
+			<div class="bd-callout bd-callout-info">
 				<b>Research Assistant in the Climate and Health group, ISGlobal (2018 – 2019)</b>
 				<p> </p>
 WINDBIOME – Aerial micro-biome diversity and their role in Kawasaki disease | Funding Institution: Daniel Bravo Private Foundation | Call: Paediatric
@@ -136,11 +143,12 @@ analysis).</li>
 					<li>Characterization of the air column’s physical properties and dynamics from LIDAR observations (AD-Net).</li>
 					<li>Developed interactive web apps in R for visual analysis.</li>
 				</ul>
+			</div>
 		</section>
 		
 		<section id="education" >
 			<h2 class="text-primary"> 3. Education<a href="#education"></a></h2>
-			<div class "bd-allout bd-callout-info">
+			<div class="bd-callout bd-callout-info">
 				<b>PhD in Computer Science, Trinity College Dublin (2019 – Expected 2022)</b>
 				<p> </p>
 				Supervisors: Declan O’Sullivan and Fabrizio Orlandi
@@ -151,14 +159,15 @@ analysis).</li>
 supporting Health Data Researchers (HDR) in studying the influence of environmental factors associated with a disease.
 			</div>
 			
-			<div class "bd-allout bd-callout-info">
+			<div class="bd-callout bd-callout-info">
 				<b>MSc Modelling for Science and Engineering, Universitat Autònoma de Barcelona (2017 – 2018)</b>
 				<p> </p>
 				Specialization in Complex Systems, Courses in Mathematics and Big Data, Deterministic Modelling, Parallel Programming and Applied Stochastic Processes.
 				<p> </p>
 				Internship and Master’s thesis in the Climate & Health group, ISGlobal supervised by Dr. Xavier Rodó. Participated in the Kawasaki disease project with the aim of comprehending Kawasaki disease through aerosol optical measurements
 			</div>
-			<div class "bd-allout bd-callout-info">
+			
+			<div class="bd-callout bd-callout-info">
 				<b>BA Nanotechnology, Universitat Autònoma de Barcelona (2013 – 2017)</b>
 				<p> </p>
 				Interdisciplinary training in Chemistry, Physics, Biology and Mathematics.
