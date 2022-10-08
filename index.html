@@ -1,88 +1,208 @@
 <!DOCTYPE html>
 <html lang="en" >
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<style>
-body {
-  font-family: "Lato", sans-serif;
-}
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+	<!-- Add icon library -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	  
+	<style>
+		body {
+		  font-family: sans-serif;
+		}
+				
+		.main {
+		  margin-left: 5%; 
+		  margin-right: 5%;
+		  font-size: calc(10px + 1vw);
+		  // padding: 0px 10px;
+		}
 
-.sidenav {
-  width: 15%;
-  position: fixed;
-  z-index: 1;
-  top: 20px;
-  left: 10px;
-  background: #eee;
-  overflow-x: hidden;
-  padding: 8px 0;
-}
+		h1 {
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+		}
 
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #2196F3;
-  display: block;
-}
+		h2,h3,h4 {	
+			padding-top: 1.5rem;
+			padding-bottom: 0.5rem;
+			color: #005A9C;
+		}
 
-.sidenav a:hover {
-  color: #064579;
-}
+		.bd-callout {
+		  padding: 1.25rem;
+		  margin-top: 1.25rem;
+		  margin-bottom: 1.25rem;
+		  border: 1px solid #eee;
+		  border-left-width: .25rem;
+		  border-radius: .25rem;
+		}
+		.bd-callout-info {
+		  border-left-color: #2e86c1 ;
+		  border-left-width: 0.5rem;
+		}
+		.bd-callout-info { @include bs-callout-variant($bd-info); }
 
-.main {
-  margin-left: 20%; /* Same width as the sidebar + left position in px */
-  margin-right: 10%;
-  font-size: 16px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
-}
+		.fa {
+		  padding: 0.3rem;
+		  text-align: center;
+		  text-decoration: none;
+		  margin: 5px 2px;
+		}
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+		.fa:hover {
+			opacity: 0.7;
+		}
 
-.bd-callout {
-  padding: 1.25rem;
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-  border: 1px solid #eee;
-  border-left-width: .25rem;
-  border-radius: .25rem;
-}
-.bd-callout-info {
-  border-left-color: #2e86c1 ;
-  border-left-width: 0.5rem;
-}
-.bd-callout-info { @include bs-callout-variant($bd-info); }
+		.fa-google {
+		  background: #dd4b39;
+		  color: white;
+		}
+
+		.fa-linkedin {
+		  background: #007bb5;
+		  color: white;
+		}
+
+		.fa-github {
+		  background: #24292f;
+		  color: white;
+		}
+
+		.fa-user-secret {
+		  background:   #c39bd3 ;
+		  color:  white;
+		}
+		
+		.green-codespan {
+			  color:    #1e8449 ;
+			  background-color:   #e9f7ef  ;
+			  border-radius: 0.5rem;
+			  padding: 0.25rem;
+			  /* font-size: 110%;*/
+			}
+			
+			.blue-codespan {
+			  color:  #1f618d;
+			  background-color:  #eaf2f8;
+			  border-radius: 0.5rem;
+			  padding: 0.25rem;
+			  /* font-size: 110%;*/
+			}
+			
+			.section-codespan {
+			  color:  #1f618d;
+			  background-color:  transparent;
+			  border-radius: 0.5rem;
+			  padding: 0.25rem;
+			  /* font-size: 110%;*/
+			}
+			
+			.lightblue-codespan {
+			  color:   #03a9f4 ;
+			  background-color:  #e1f5fe;
+			  border-radius: 0.5rem;
+			  padding: 0.25rem;
+			  /* font-size: 110%;*/
+			}
+			
+			.red-codespan {
+			  color:   #a93226 ;
+			  background-color: #fadbd8 ;
+			  border-radius: 0.5rem;
+			  padding: 0.25rem;
+			  /* font-size: 110%;*/
+			}
+			
+			.orange-codespan {
+			  color:   #d35400 ;
+			  background-color:   #f6ddcc  ;
+			  border-radius: 0.5rem;
+			  padding: 0.25rem;
+			  /* font-size: 110%;*/
+			}
+			
+			.grey-codespan {
+			  color:   #515a5a  ;
+			  background-color:  #ccd1d1  ;
+			  border-radius: 0.5rem;
+			  padding: 0.25rem;
+			  /* font-size: 110%;*/
+			}
 
 
-</style>
+	</style>
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="assets/main.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-       
+ 
 <title>Albert Navarro-Galllinad</title>
   
 
-<body>    
-    <div id="mySidenav" class="sidenav">
-    	<h3 id="table-of-contents">Table of Contents</h3>
-    	<a href="#profile">Professional Profile</a>
-		<a href="#interests">Research Interests</a>
-		<a href="#skills">1. Core Skills</a>	
-		<a href="#expertise">2. Expertise</a>
-		<a href="#education">3. Education</a>
-		<a href="#publications">4. Publications</a>
-		<a href="#conferences">5. Conferences</a>
-		<a href="#data">6. Data publications</a>
-		<a href="#awards">7. Awards</a>
-		<a href="#teaching">8. Teaching Experience</a>
-    </div>
+<body> 
 	
+	<!--Navbar-->
+	<nav class="navbar navbar-light light-blue lighten-4">
+	  <!-- Collapse button -->
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		  <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <!-- Navbar brand -->
+	  <a class="navbar-brand" href="#">Home</a>
+	  <a href="https://navarral.github.io/" class="fa fa-user-secret"></a>
+	  <a href="https://github.com/navarral" class="fa fa-github"></a>
+      <a href="mailto:anavarro@tcd.ie" class="fa fa-google"></a>
+	  <a href="https://www.linkedin.com/in/albert-navarro-gallinad-987902170/" class="fa fa-linkedin"></a>
+
+
+	  
+	  <!-- Collapsible content -->
+	  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<!-- Links -->
+		<ul class="navbar-nav">
+		  <li class="nav-item active">
+			<a class="nav-link" href="#profile">Professional Profile</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#interests">Research Interests</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#skills">1. Core Skills</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#expertise">2. Expertise</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#education">3. Education</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#publications">4. Publications</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#conferences">5. Conferences</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#data">6. Data publications</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#awards">7. Awards</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#teaching">8. Teaching Experience</a>
+		  </li>
+		</ul>
+		<!-- Links -->
+
+	  </div>
+	  <!-- Collapsible content -->
+
+	</nav>
+	<!--/.Navbar-->
+
 	<div class="main">
 		</a> <h1 id="title">Albert Navarro Gallinad</h1>
     
@@ -93,42 +213,43 @@ body {
 			</dt> 	
 		</dl>    
     
-	  <p class="copyright"> © 2022 - Copyright: Albert Navarro-Gallinad (Last update: June 2022)  </p>
+	  <p class="copyright"> © 2022 - Copyright: Albert Navarro-Gallinad (Last update: September 2022)  </p>
 		<hr title="Separator for header">
   
     
 		<section id="profile" >
-			<h2 class="text-primary">Professional Profile</h2>
+			<h2 >Professional Profile</h2>
 					A PhD student in Computer Science specialized in facilitating the linkage between health and environmental data and the publication of research data as open as possible for researchers using Semantic Web.
 		</section>
 		
 		<section id="interests">
-		<h2 class="text-primary">Research interests</h2>
+		<h2>Research interests</h2>
 			My principal research interests lie in the data aspects (suitability, analysis, retrieval) to support the areas of study regarding the environmental effects on human health.
 		</section>
 		
 		<section id="skills">
-			<h2 class="text-primary">1. Core Skills<a href="#skills"></a></h2>
-			<ul>
-				<li><code>Semantic Web Technologies</code>: applied to Big Data, data integration, knowledge discovery.</li>
-				<li><code>Data preprocessing and statistical analysis</code>: environmental (satellite and measurement stations) and clinical data (longitudinal patient records and epidemiological data)</li>
-				<li><code>Web app developer</code>: analytical platforms with <a href="https://shiny.rstudio.com/">R Shiny</a> and <a href="https://dash.plotly.com/">Python Dash</a>.</li>
-				<li><code>FAIR principles</code>: making research data Findable, Accessible, Interoperable and Reusable (FAIR).</li>
-				<li><code>Data sharing and publication</code>: making data compliant with data policies and regulations at a European level.</li>
-				<li><code>Data-driven reports</code>: Markdown, Jupyter notebooks and HTML templates.</li>
-				<li><code>Linux</code>: knowledge in the operating system./li>
+			<h2>1. Core Skills<a href="#skills"></a></h2>
+			<ul class="fa-ul">
+				<li><i class="fa-li fa fa-link"></i><code class="green-codespan">Knowledge Graphs</code>: applied to Big Data, W3C standards, data integration, knowledge discovery.</li>
+				<li><i class="fa-li fa fa-table"></i><code class="green-codespan">Data preprocessing and statistical analysis</code>: environmental (satellite and measurement stations) and clinical data (longitudinal patient records and epidemiological data)</li>
+				<li><i class="fa-li fa fa-laptop"></i><code class="green-codespan">Web app developer</code>: analytical platforms with <a href="https://shiny.rstudio.com/">R Shiny</a> and <a href="https://dash.plotly.com/">Python Dash</a>.</li>
+				<li><i class="fa-li fa fa-search-plus"></i><code class="green-codespan">FAIR principles</code>: making research data Findable, Accessible, Interoperable and Reusable (FAIR).</li>
+				<li><i class="fa-li fa fa-shield"></i><code class="green-codespan">Data sharing and publication</code>: making data compliant with data policies and regulations at a European level.</li>
+				<li><i class="fa-li fa fa-file-code-o"></i><code class="green-codespan">Data-driven reports</code>: Markdown, Jupyter notebooks and HTML templates.</li>
+				<li><i class="fa-li fa fa-linux"></i><code class="green-codespan">Linux</code>: knowledge in the operating system. </li>
 			</ul>
 		</section>
 		
 		<section id="expertise" >
-			<h2 class="text-primary"> 2. Expertise<a href="#expertise"></a></h2>
+			<h2> 2. Expertise<a href="#expertise"></a></h2>
 			<div class="bd-callout bd-callout-info">
 				<b>PhD Researcher in the ADAPT Centre, Trinity College Dublin (2019 – Present)</b>
 				<p> </p>
-HELICAL – Data Science challenge in rare autoimmune diseases | Funding Scheme: MSCA-ITN-ETN – European Training networks | Grant agreement ID: 813545 | Call: H2020-MSCA-ITN-2018 | Budget of € 4.050.338,40 | Period 2019-2022
+HELICAL – Data Science challenge in rare autoimmune diseases | Funding Scheme: MSCA-ITN-ETN – European Training networks | Grant agreement ID: 813545 | Call: H2020-MSCA-ITN-2018 | Budget of € 4.050.338,40 | Period 2019-2023
 				<ul>
-					<li>Development of a framework using Semantic Web technologies (RDF, SPARQL, Ontologies and Linked Data) combining multiple diverse data sources: weather, pollution and clinical data; for non-domain experts.</li>
-					<li>Patient-environmental data linkage open data publication support for rare chronic diseases ensuring good data protection practices.</li>
+					<li>Enabling the linkage between environmental and health data for domain experts by using Knowledge Graphs.</li>
+					<li>Challenges addressed: data interoperability and Knowledge Graphs usability.</li>
+					<li>Use cases: rare disease research</li>
 					<li>Public engagement activities for patient support groups and general public.</li>
 				</ul>
 			</div>
@@ -147,9 +268,9 @@ analysis).</li>
 		</section>
 		
 		<section id="education" >
-			<h2 class="text-primary"> 3. Education<a href="#education"></a></h2>
+			<h2> 3. Education<a href="#education"></a></h2>
 			<div class="bd-callout bd-callout-info">
-				<b>PhD in Computer Science, Trinity College Dublin (2019 – Expected 2022)</b>
+				<b>PhD in Computer Science, Trinity College Dublin (2019 – Expected 2023)</b>
 				<p> </p>
 				Supervisors: Declan O’Sullivan and Fabrizio Orlandi
 				<p> </p>
@@ -177,55 +298,58 @@ supporting Health Data Researchers (HDR) in studying the influence of environmen
 		</section>		
 		
 		<section id="publications">
-			<h2 class="text-primary">4. Publications<a href="#publications"></a></h2>
+			<h2>4. Publications<a href="#publications"></a></h2>
 			<ol>
 				<h3> 2022 </h3>
-					<li> Navarro-Gallinad, Albert, Fabrizio Orlandi, and Declan O'Sullivan. Evaluating the usability of a semantic health data framework: approach and study. Semantic Web Journal. 2022. <a href="http://www.semantic-web-journal.net/content/evaluating-usability-semantic-health-data-framework-approach-and-study" target="_blank">[Publication]</a> <a href="http://www.semantic-web-journal.net/system/files/swj3119.pdf" target="_blank">[PDF]</a> (under review)</li>
+					<li> Navarro-Gallinad, Albert, Fabrizio Orlandi, Jennifer Scott, Mark Little and Declan O'Sullivan. Evaluating the usability of a semantic environmental health data framework: approach and study. Semantic Web Journal. 2022. <code class="red-codespan">Top Web Journal Article</code> <a href="https://www.semantic-web-journal.net/content/evaluating-usability-semantic-environmental-health-data-framework-approach-and-study" target="_blank">[Publication]</a> <a href="https://www.semantic-web-journal.net/system/files/swj3212.pdf" target="_blank">[PDF]</a> (accepted)</li>
+					<li> Scott, J., Havyarimana, E., Navarro-Gallinad, A. et al. The association between ambient UVB dose and ANCA-associated vasculitis relapse and onset. Arthritis Res Ther 24, 147 (2022). <code class="red-codespan">Journal Article</code> <a href="https://doi.org/10.1186/s13075-022-02834-6" target="_blank">[Publication]</a> <a href="https://arthritis-research.biomedcentral.com/counter/pdf/10.1186/s13075-022-02834-6.pdf" target="_blank">[PDF]</a></li>
 				<h3> 2021 </h3>
-					<li> Navarro-Gallinad, Albert, Fabrizio Orlandi, and Declan O'Sullivan. Enhancing Rare Disease Research with Semantic Integration of Environmental and Health Data. The 10th International Joint Conference on Knowledge Graphs. 2021. <code>Best conference paper nomination</code> <a href="https://doi.org/10.1145/3502223.3502226" target="_blank">[Publication]</a> <a href="http://www.tara.tcd.ie/bitstream/handle/2262/97660/Navarro-Gallinad_etal_IJCKG2021_CameraReady.pdf?sequence=1" target="_blank">[PDF]</a></li>
+					<li> Navarro-Gallinad, Albert, Fabrizio Orlandi, and Declan O'Sullivan. Enhancing Rare Disease Research with Semantic Integration of Environmental and Health Data. The 10th International Joint Conference on Knowledge Graphs. 2021. <code class="red-codespan">Best conference paper nomination</code> <a href="https://doi.org/10.1145/3502223.3502226" target="_blank">[Publication]</a> <a href="http://www.tara.tcd.ie/bitstream/handle/2262/97660/Navarro-Gallinad_etal_IJCKG2021_CameraReady.pdf?sequence=1" target="_blank">[PDF]</a></li>
 				<h3> 2020 </h3>
-					<li> Navarro-Gallinad, Albert, Alan Meehan, and Declan O'Sullivan. The Semantic Combining for Exploration of Environmental and Disease Data Dashboard for Clinician Researchers. VOILA@ ISWC. 2020. <a href="http://voila2020.visualdataweb.org/" target="_blank">[Publication]</a> <a href="http://ceur-ws.org/Vol-2778/paper7.pdf" target="_blank">[PDF]</a></li>
+					<li> Navarro-Gallinad, Albert, Alan Meehan, and Declan O'Sullivan. The Semantic Combining for Exploration of Environmental and Disease Data Dashboard for Clinician Researchers. VOILA@ ISWC. 2020. <code class="red-codespan">Premier Workshop</code> <a href="http://voila2020.visualdataweb.org/" target="_blank">[Publication]</a> <a href="http://ceur-ws.org/Vol-2778/paper7.pdf" target="_blank">[PDF]</a></li>
 				<h3> 2019 </h3>
-					<li> Ballester, J., Borràs, S., Curcoll, R., Navarro-Gallinad, A., Pozdniakova, S., Cañas, L., Burns, J.C. and Rodó, X. On the interpretation of the atmospheric mechanism transporting the environmental trigger of Kawasaki Disease. PloS one 14.12 (2019) <a href="https://doi.org/10.1371/journal.pone.0226402" target="_blank">[Publication]</a> <a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0226402&type=printable" target="_blank">[PDF]</a></li>
+					<li> Ballester, J., Borràs, S., Curcoll, R., Navarro-Gallinad, A., Pozdniakova, S., Cañas, L., Burns, J.C. and Rodó, X. On the interpretation of the atmospheric mechanism transporting the environmental trigger of Kawasaki Disease. PloS one 14.12 (2019) <code class="red-codespan">Formal comment</code> <a href="https://doi.org/10.1371/journal.pone.0226402" target="_blank">[Publication]</a> <a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0226402&type=printable" target="_blank">[PDF]</a></li>
 			</ol>
 		</section>
 		
 		<section id="conferences">
-			<h2 class="text-primary"> 5. Conferences<a href="#conferences"></a></h2>
+			<h2> 5. Conferences<a href="#conferences"></a></h2>
 			<ol>
 				<h3> 2022 </h3>
-					<li> Albert Navarro-Gallinad, Maria Christofidou, Solange Gonzalez Chiappe, Nathan Lea, Dipak Kalra, Fabrizio Orlandi and Declan O’Sullivan. Rare diseases: making environmental health studies’ data as open as possible. The 20th International Vasculitis and ANCA Workshop. 2022. <code>Poster Abstract</code> <a href="https://vasculitis2022.org/" target="_blank">[Conference]</a> <a href="http://www.semantic-web-journal.net/content/evaluating-usability-semantic-health-data-framework-approach-and-study" target="_blank">[Publication]</a> <a href="https://raw.githubusercontent.com/navarral/anca2022-poster/main/Navarro-Gallinad_poster_landscape_ANCA_2022.pdf" target="_blank">[PDF]</a></li>
+					<li> Albert Navarro-Gallinad, Maria Christofidou, Solange Gonzalez Chiappe, Nathan Lea, Dipak Kalra, Fabrizio Orlandi and Declan O’Sullivan. Rare diseases: making environmental health studies’ data as open as possible. The 20th International Vasculitis and ANCA Workshop. 2022. <code class="red-codespan">Poster Abstract</code> <a href="https://vasculitis2022.org/" target="_blank">[Conference]</a> <a href="http://www.semantic-web-journal.net/content/evaluating-usability-semantic-health-data-framework-approach-and-study" target="_blank">[Publication]</a> <a href="https://raw.githubusercontent.com/navarral/anca2022-poster/main/Navarro-Gallinad_poster_landscape_ANCA_2022.pdf" target="_blank">[PDF]</a></li>
 					<p> </p>
-					<li> Albert Navarro-Gallinad, Maria Christofidou, Fabrizio Orlandi, Nathan Lea, Dipak Kalra and Declan O’Sullivan. Support for publishing environmental health data as open as possible. The Marie Curie Anual Conference (MCAA). 2022. <code>Poster Abstract</code> <a href="https://www.mariecuriealumni.eu/conference-2022" target="_blank">[Conference]</a> <a href="https://github.com/navarral/mcaa2022-poster" target="_blank">[Publication]</a> <a href="https://raw.githubusercontent.com/navarral/mcaa2022-poster/main/Navarro-Gallinad_poster_MCAA_2022.pdf" target="_blank">[PDF]</a></li>
+					<li> Albert Navarro-Gallinad, Maria Christofidou, Fabrizio Orlandi, Nathan Lea, Dipak Kalra and Declan O’Sullivan. Support for publishing environmental health data as open as possible. The Marie Curie Anual Conference (MCAA). 2022. <code class="red-codespan">Poster Abstract</code> <a href="https://www.mariecuriealumni.eu/conference-2022" target="_blank">[Conference]</a> <a href="https://github.com/navarral/mcaa2022-poster" target="_blank">[Publication]</a> <a href="https://raw.githubusercontent.com/navarral/mcaa2022-poster/main/Navarro-Gallinad_poster_MCAA_2022.pdf" target="_blank">[PDF]</a></li>
 					
 				<h3> 2021 </h3>
-					<li> Albert Navarro-Gallinad, Fabrizio Orlandi, Dipak Kalra, Xavier Rodó, Mark Little and Declan O’Sullivan. Rare disease: it’s all about combining data. The Marie Curie Anual Conference (MCAA). 2021. <code>Poster Abstract</code> <a href="https://www.mariecuriealumni.eu/sites/default/files/2021-04/MCAA-Book-of-Abstracts-2021-v7.pdf" target="_blank">[Conference]</a> <a href="https://www.mariecuriealumni.eu/sites/default/files/2021-04/MCAA-Book-of-Abstracts-2021-v7.pdf" target="_blank">[Publication]</a> <a href="https://www.mariecuriealumni.eu/sites/default/files/2021-04/MCAA-Book-of-Abstracts-2021-v7.pdf" target="_blank">[PDF]</a></li>
+					<li> Albert Navarro-Gallinad, Fabrizio Orlandi, Dipak Kalra, Xavier Rodó, Mark Little and Declan O’Sullivan. Rare disease: it’s all about combining data. The Marie Curie Anual Conference (MCAA). 2021. <code class="red-codespan">Poster Abstract</code> <a href="https://www.mariecuriealumni.eu/sites/default/files/2021-04/MCAA-Book-of-Abstracts-2021-v7.pdf" target="_blank">[Conference]</a> <a href="https://www.mariecuriealumni.eu/sites/default/files/2021-04/MCAA-Book-of-Abstracts-2021-v7.pdf" target="_blank">[Publication]</a> <a href="https://www.mariecuriealumni.eu/sites/default/files/2021-04/MCAA-Book-of-Abstracts-2021-v7.pdf" target="_blank">[PDF]</a></li>
 				<h3> 2020 </h3>
-					<li> Xavier Rodó, Albert Navarro-Gallinad, Tomoko Kojima, Joan Ballester and Sílvia Borràs. Sub-weekly cycle uncovers the hidden link of aerosols and their composition to Kawasaki disease. First European Congress on Kawasaki Disease (EUROKIDS). 2021. <code>Oral Presentation</code> <a href="https://www.alphavisa.com/euro-kids/2020/index.php" target="_blank">[Conference]</a> </li>
+					<li> Xavier Rodó, Albert Navarro-Gallinad, Tomoko Kojima, Joan Ballester and Sílvia Borràs. Sub-weekly cycle uncovers the hidden link of aerosols and their composition to Kawasaki disease. First European Congress on Kawasaki Disease (EUROKIDS). 2021. <code class="red-codespan">Oral Presentation</code> <a href="https://www.alphavisa.com/euro-kids/2020/index.php" target="_blank">[Conference]</a> </li>
 					<p> </p>
 					<li> Xavier Rodó, Albert Navarro-Gallinad, Tomoko Kojima, Joan Ballester and Sílvia Borràs. Particulate matter dynamics and chemistry drive
-Kawasaki disease epidemiology in Japan. The 10th International Conference on Children’s Health and the Environment (INCHES). 2020. <code>Oral Presentation</code> <a href="https://inchesnetwork.net/conference-2020/" target="_blank">[Conference]</a> </li>
+Kawasaki disease epidemiology in Japan. The 10th International Conference on Children’s Health and the Environment (INCHES). 2020. <code class="red-codespan">Oral Presentation</code> <a href="https://inchesnetwork.net/conference-2020/" target="_blank">[Conference]</a> </li>
 					<p> </p>
 				<h3> 2018 </h3>
-					<li> Albert Navarro-Gallinad. Conference Speaker in the Nanoscience and Nanotechnology gathering in Spain with the intention to popularize this discipline with public engaging activities to students. 10 a la menos 9. (2018) <code>Speaker</code> <a href="https://10alamenos9.es/" target="_blank">[Conference]</a></li>
+					<li> Albert Navarro-Gallinad. Conference Speaker in the Nanoscience and Nanotechnology gathering in Spain with the intention to popularize this discipline with public engaging activities to students. 10 a la menos 9. (2018) <code class="red-codespan">Speaker</code> <a href="https://10alamenos9.es/" target="_blank">[Conference]</a></li>
 			</ol>
 		</section>
 		
 		<section id="awards" >
-			<h2 class="text-primary"> 7. Awards<a href="#awards"></a></h2>
+			<h2> 7. Awards<a href="#awards"></a></h2>
 				2020 - Research Fellowship Marie Skłodowska-Curie International Training Network (MSCA-ITN)
 				<p> </p>
 				2017 - Thesis award of Sustainable Development from Universitat Autònoma de Barcelona
 		</section>
 		
 		<section id="teaching" >
-			<h2 class="text-primary"> 8. Teaching experience<a href="#teaching"></a></h2>
+			<h2> 8. Teaching experience<a href="#teaching"></a></h2>
 				2020 – Present - Demonstrator in the practical labs and exams marking for undergraduates in the Engineering Design Project, Knowledge and Data Engineering modules in Trinity College Dublin
 				<p> </p>
 				2013 – 2017 Personal teacher in Natural Sciences and English for High School students
 		</section>
 		
   </div>
+  
+  
 
 </body>
 </html>
