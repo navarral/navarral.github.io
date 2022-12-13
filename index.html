@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	
 	<!-- Add icon library -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 	  
 	<style>
 		body {
@@ -20,7 +20,7 @@
 		.main {
 		  margin-left: 5%; 
 		  margin-right: 5%;
-		  font-size: calc(10px + 1vw);
+		  font-size: calc(10px + 1vh);
 		  // padding: 0px 10px;
 		}
 
@@ -63,6 +63,14 @@
 		.fa-google {
 		  background: #dd4b39;
 		  color: white;
+		}
+		
+		
+		.fa-info {
+		  background:  #d4e157;
+		  color: white;
+		  padding-right: 0.6rem;
+		  padding-left: 0.6rem;
 		}
 
 		.fa-linkedin {
@@ -145,78 +153,33 @@
 
 <body> 
 	
-	<!--Navbar-->
-	<nav class="navbar navbar-light light-blue lighten-4 navbar-fixed-top">
-	  <!-- Collapse button -->
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-		  <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <!-- Navbar brand -->
-	  <a class="navbar-brand" href="#">Home</a>
-	  <a href="https://navarral.github.io/" class="fa fa-user-secret"></a>
-	  <a href="https://github.com/navarral" class="fa fa-github"></a>
-      <a href="mailto:anavarro@tcd.ie" class="fa fa-google"></a>
-	  <a href="https://www.linkedin.com/in/albert-navarro-gallinad-987902170/" class="fa fa-linkedin"></a>
-
-
-	  
-	  <!-- Collapsible content -->
-	  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-		<!-- Links -->
-		<ul class="navbar-nav">
-		  <li class="nav-item active">
-			<a class="nav-link" href="#profile">Professional Profile</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#interests">Research Interests</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#skills">1. Core Skills</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#expertise">2. Expertise</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#education">3. Education</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#publications">4. Publications</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#conferences">5. Conferences</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#data">6. Data publications</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#awards">7. Awards</a>
-		  </li>
-		  <li class="nav-item">
-			<a class="nav-link" href="#teaching">8. Teaching Experience</a>
-		  </li>
-		</ul>
-		<!-- Links -->
-
-	  </div>
-	  <!-- Collapsible content -->
-
-	</nav>
-	<!--/.Navbar-->
+	
 
 	<div class="main">
-		</a> <h1 id="title">Albert Navarro Gallinad</h1>
-    
-    	<h2>PhD Student | Assistant Researcher | Data engineer</h2>
-    
-		<dl>
-			<dt> <a href="mailto:anavarro@tcd.ie">anavarro@tcd.ie</a> | <a href="https://orcid.org/0000-0002-2336-753X" target="_blank">ORCID</a> | <a href="https://www.linkedin.com/in/albert-navarro-gallinad-987902170/" target="_blank">Linkedin</a> 
-			</dt> 	
-		</dl>    
-    
-	  <p class="copyright"> © 2022 - Copyright: Albert Navarro-Gallinad (Last update: September 2022)  </p>
-		<hr title="Separator for header">
-  
-    
+		
+	<!-- Tabs -->
+		<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+		  <li class="nav-item" role="presentation">
+			<button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+		  </li>
+		  <li class="nav-item" role="presentation">
+			<button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+		  </li>
+		  <li class="nav-item" role="presentation">
+			<button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Research</button>
+		  </li>
+		</ul>
+		<div class="tab-content" id="pills-tabContent">
+		  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+			  <h1>I am <b>Albert</b> Navarro-Gallinad</h1>
+			  A <b>Knowledge Scientist</b> (Artificial Intelligence) with proven experience in developing expert systems to address complex data challenges in the healthcare
+			  <p></p>
+			  <a href="assets/Resume_AlbertNavarroGallinad_Dec2022.pdf" class="btn btn-outline-dark btn-lg" role="button" data-bs-toggle="button">Resume</a>
+			  <a href="assets/CV_AlbertNavarroGallinad_Dec2022.pdf" download="CV_AlbertNavarroGallinad_Dec2022.pdf" class="btn btn-outline-dark btn-lg" role="button" data-bs-toggle="button">CV</a>
+		  </div>
+		  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+		  
+			   
 		<section id="profile" >
 			<h2 >Professional Profile</h2>
 					A PhD student in Computer Science specialized in facilitating the linkage between health and environmental data and the publication of research data as open as possible for researchers using Semantic Web.
@@ -347,6 +310,24 @@ Kawasaki disease epidemiology in Japan. The 10th International Conference on Chi
 				2013 – 2017 Personal teacher in Natural Sciences and English for High School students
 		</section>
 		
+		  </div>
+		  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+		</div>
+		<!--/.Tabs-->
+		
+		
+		<p></p>
+
+	  Contact: 
+	  <a href="mailto:anavarro@tcd.ie">anavarro@tcd.ie</a> 
+	  <a href="https://www.linkedin.com/in/albert-navarro-gallinad/" target="_blank" class="fa fa-linkedin"></a> 
+	  <a href="https://github.com/navarral" target="_blank"  class="fa fa-github"></a>
+	  <a href="https://orcid.org/0000-0002-2336-753X" class="fa fa-info"></a>
+      <a href="mailto:anavarro@tcd.ie" class="fa fa-google"></a>
+
+	  <hr title="copyright separator">
+	  <p class="copyright"> © 2022 - Copyright: Albert Navarro-Gallinad (Last update: December 2022)  </p>
+ 
   </div>
   
   
