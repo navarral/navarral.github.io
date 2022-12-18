@@ -21,7 +21,6 @@
 		  margin-left: 5%; 
 		  margin-right: 5%;
 		  font-size: calc(10px + 1vh);
-		  // padding: 0px 10px;
 		}
 
 		h1 {
@@ -143,8 +142,6 @@
 			  padding: 0.25rem;
 			  /* font-size: 110%;*/
 			}
-
-
 	</style>
 
  
@@ -157,32 +154,66 @@
 
 	<div class="main">
 		
-	<!-- Tabs -->
+	<!-- Tabs -->	
 		<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 		  <li class="nav-item" role="presentation">
-			<button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+			<button class="nav-link active bg-dark" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
 		  </li>
 		  <li class="nav-item" role="presentation">
-			<button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+			<button class="nav-link outline-dark" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
 		  </li>
 		  <li class="nav-item" role="presentation">
-			<button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Research</button>
+			<button class="nav-link" id="pills-research-tab" data-bs-toggle="pill" data-bs-target="#pills-research" type="button" role="tab" aria-controls="pills-research" aria-selected="false">Research</button>
+		  </li>
+		  <li class="nav-item" role="presentation">
+			<button class="nav-link" id="pills-projects-tab" data-bs-toggle="pill" data-bs-target="#pills-projects" type="button" role="tab" aria-controls="pills-projects" aria-selected="false">Projects</button>
+		  </li>
+		  <li class="nav-item" role="presentation">
+			<button class="nav-link" id="pills-publications-tab" data-bs-toggle="pill" data-bs-target="#pills-publications" type="button" role="tab" aria-controls="pills-publications" aria-selected="false">Publications</button>
+		  </li>
+		  <li class="nav-item" role="presentation">
+			<button class="nav-link" id="pills-games-tab" data-bs-toggle="pill" data-bs-target="#pills-games" type="button" role="tab" aria-controls="pills-games" aria-selected="false">Outreach</button>
 		  </li>
 		</ul>
+		<hr title="content separator">
+		
 		<div class="tab-content" id="pills-tabContent">
 		  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-			  <h1>I am <b>Albert</b> Navarro-Gallinad</h1>
-			  A <b>Knowledge Scientist</b> (Artificial Intelligence) with proven experience in developing expert systems to address complex data challenges in the healthcare
+			  <h1><b>Albert</b> Navarro-Gallinad</h1>
+			  <div class="container">
+			  <div class="row">
+				<div class="col-9">
+				  I am a <b>PhD researcher</b> in Computer Science at <a href="https://www.adaptcentre.ie/">ADAPT centre</a>
+				   in <a href="https://www.tcd.ie/">Trinity College Dublin</a>. 
+				  My research interests lie in making Knowledge Graph technologies (Artificial Intelligence) usable for domain experts.
+				  <p></p>
+				  I have PhD-level experience in developing expert systems to address complex data challenges in the healthcare for researchers across Europe.
+				  <p></p>
+				  In my free time, I like reading sci-fy or scientific dissemination books that explain complex topics 
+				  using simple language and visualisations. I am also quite active in sports as Iike playing basketball,
+				  doing aikido and running as an excuse to visit beautiful places. I also really enjoy travelling and learning
+				  from new cultures which I try to do at least once a year.		  
+				  <p></p>
+				</div>
+				<div class="col-3">
+				  <img src="assets/AlbertNavarroFotoCV_Small.jpg" alt="AlbertNavarroPhoto" width="70%" class="center">			
+				</div>
+			  </div>
+			</div>
+			  
+			  
+			  <a href="assets/Resume_AlbertNavarroGallinad_Dec2022.pdf" class="btn btn-outline-dark btn-lg" >Resume</a>
+			  <a href="assets/CV_AlbertNavarroGallinad_Dec2022.pdf"  class="btn btn-outline-dark btn-lg"  >CV</a>
 			  <p></p>
-			  <a href="https://raw.githubusercontent.com/navarral/navarral.github.io/main/assets/Resume_AlbertNavarroGallinad_Dec2022.pdf" target="_blank" class="btn btn-outline-dark btn-lg">Resume</a>
-			  <a href="https://raw.githubusercontent.com/navarral/navarral.github.io/main/assets/CV_AlbertNavarroGallinad_Dec2022.pdf" target="_blank" class="btn btn-outline-dark btn-lg">CV</a>
-		  	  <p></p>
-			  <img src="assets/knowledgeScientist-diagram.png" alt="knowledgeScientist-diagram" width="90%">
+			   
+			  
+			  
 		  </div>
 		  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 		  
 			   
 		<section id="profile" >
+			  <p></p>
 			<h2 >Professional Profile</h2>
 					A PhD student in Computer Science specialized in facilitating the linkage between health and environmental data and the publication of research data as open as possible for researchers using Semantic Web.
 		</section>
@@ -193,7 +224,7 @@
 		</section>
 		
 		<section id="skills">
-			<h2>1. Core Skills<a href="#skills"></a></h2>
+			<h2>Skills<a href="#skills"></a></h2>
 			<ul class="fa-ul">
 				<li><i class="fa-li fa fa-link"></i><code class="green-codespan">Knowledge Graphs</code>: applied to Big Data, W3C standards, data integration, knowledge discovery.</li>
 				<li><i class="fa-li fa fa-table"></i><code class="green-codespan">Data preprocessing and statistical analysis</code>: environmental (satellite and measurement stations) and clinical data (longitudinal patient records and epidemiological data)</li>
@@ -205,115 +236,175 @@
 			</ul>
 		</section>
 		
-		<section id="expertise" >
-			<h2> 2. Expertise<a href="#expertise"></a></h2>
-			<div class="bd-callout bd-callout-info">
-				<b>PhD Researcher in the ADAPT Centre, Trinity College Dublin (2019 – Present)</b>
-				<p> </p>
-HELICAL – Data Science challenge in rare autoimmune diseases | Funding Scheme: MSCA-ITN-ETN – European Training networks | Grant agreement ID: 813545 | Call: H2020-MSCA-ITN-2018 | Budget of € 4.050.338,40 | Period 2019-2023
-				<ul>
-					<li>Enabling the linkage between environmental and health data for domain experts by using Knowledge Graphs.</li>
-					<li>Challenges addressed: data interoperability and Knowledge Graphs usability.</li>
-					<li>Use cases: rare disease research</li>
-					<li>Public engagement activities for patient support groups and general public.</li>
-				</ul>
-			</div>
-			
-			<div class="bd-callout bd-callout-info">
-				<b>Research Assistant in the Climate and Health group, ISGlobal (2018 – 2019)</b>
-				<p> </p>
-WINDBIOME – Aerial micro-biome diversity and their role in Kawasaki disease | Funding Institution: Daniel Bravo Private Foundation | Call: Paediatric
-Research | Budget: € 234,000 (total: 300,000€) | Period: 2016–2018.				<ul>
-					<li>Systematically examined the epidemiological Kawasaki disease records for Japan with time series analysis (Scale Dependant Correlation
-analysis).</li>
-					<li>Characterization of the air column’s physical properties and dynamics from LIDAR observations (AD-Net).</li>
-					<li>Developed interactive web apps in R for visual analysis.</li>
-				</ul>
-			</div>
-		</section>
-		
-		<section id="education" >
-			<h2> 3. Education<a href="#education"></a></h2>
-			<div class="bd-callout bd-callout-info">
-				<b>PhD in Computer Science, Trinity College Dublin (2019 – Expected 2023)</b>
-				<p> </p>
-				Supervisors: Declan O’Sullivan and Fabrizio Orlandi
-				<p> </p>
-				Supervisory panel: Dipak Kalra (i~HD), Xavier Rodó (ISGlobal) and Mark Little (TCD)
-				<p> </p>
-				Project Aim: To design a Semantic Web-based framework, that links environmental data with particular health events through location and time,
-supporting Health Data Researchers (HDR) in studying the influence of environmental factors associated with a disease.
-			</div>
-			
-			<div class="bd-callout bd-callout-info">
-				<b>MSc Modelling for Science and Engineering, Universitat Autònoma de Barcelona (2017 – 2018)</b>
-				<p> </p>
-				Specialization in Complex Systems, Courses in Mathematics and Big Data, Deterministic Modelling, Parallel Programming and Applied Stochastic Processes.
-				<p> </p>
-				Internship and Master’s thesis in the Climate & Health group, ISGlobal supervised by Dr. Xavier Rodó. Participated in the Kawasaki disease project with the aim of comprehending Kawasaki disease through aerosol optical measurements
-			</div>
-			
-			<div class="bd-callout bd-callout-info">
-				<b>BA Nanotechnology, Universitat Autònoma de Barcelona (2013 – 2017)</b>
-				<p> </p>
-				Interdisciplinary training in Chemistry, Physics, Biology and Mathematics.
-				<p> </p>
-				Bachelor’s project in Microwave assisted synthesis of VO 2 nanocrystals.
-			</div>		
-		</section>		
-		
-		<section id="publications">
-			<h2>4. Publications<a href="#publications"></a></h2>
-			<ol>
-				<h3> 2022 </h3>
-					<li> Navarro-Gallinad, Albert, Fabrizio Orlandi, Jennifer Scott, Mark Little and Declan O'Sullivan. Evaluating the usability of a semantic environmental health data framework: approach and study. Semantic Web Journal. 2022. <code class="red-codespan">Top Web Journal Article</code> <a href="https://www.semantic-web-journal.net/content/evaluating-usability-semantic-environmental-health-data-framework-approach-and-study" target="_blank">[Publication]</a> <a href="https://www.semantic-web-journal.net/system/files/swj3212.pdf" target="_blank">[PDF]</a> (accepted)</li>
-					<li> Scott, J., Havyarimana, E., Navarro-Gallinad, A. et al. The association between ambient UVB dose and ANCA-associated vasculitis relapse and onset. Arthritis Res Ther 24, 147 (2022). <code class="red-codespan">Journal Article</code> <a href="https://doi.org/10.1186/s13075-022-02834-6" target="_blank">[Publication]</a> <a href="https://arthritis-research.biomedcentral.com/counter/pdf/10.1186/s13075-022-02834-6.pdf" target="_blank">[PDF]</a></li>
-				<h3> 2021 </h3>
-					<li> Navarro-Gallinad, Albert, Fabrizio Orlandi, and Declan O'Sullivan. Enhancing Rare Disease Research with Semantic Integration of Environmental and Health Data. The 10th International Joint Conference on Knowledge Graphs. 2021. <code class="red-codespan">Best conference paper nomination</code> <a href="https://doi.org/10.1145/3502223.3502226" target="_blank">[Publication]</a> <a href="http://www.tara.tcd.ie/bitstream/handle/2262/97660/Navarro-Gallinad_etal_IJCKG2021_CameraReady.pdf?sequence=1" target="_blank">[PDF]</a></li>
-				<h3> 2020 </h3>
-					<li> Navarro-Gallinad, Albert, Alan Meehan, and Declan O'Sullivan. The Semantic Combining for Exploration of Environmental and Disease Data Dashboard for Clinician Researchers. VOILA@ ISWC. 2020. <code class="red-codespan">Premier Workshop</code> <a href="http://voila2020.visualdataweb.org/" target="_blank">[Publication]</a> <a href="http://ceur-ws.org/Vol-2778/paper7.pdf" target="_blank">[PDF]</a></li>
-				<h3> 2019 </h3>
-					<li> Ballester, J., Borràs, S., Curcoll, R., Navarro-Gallinad, A., Pozdniakova, S., Cañas, L., Burns, J.C. and Rodó, X. On the interpretation of the atmospheric mechanism transporting the environmental trigger of Kawasaki Disease. PloS one 14.12 (2019) <code class="red-codespan">Formal comment</code> <a href="https://doi.org/10.1371/journal.pone.0226402" target="_blank">[Publication]</a> <a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0226402&type=printable" target="_blank">[PDF]</a></li>
-			</ol>
-		</section>
-		
-		<section id="conferences">
-			<h2> 5. Conferences<a href="#conferences"></a></h2>
-			<ol>
-				<h3> 2022 </h3>
-					<li> Albert Navarro-Gallinad, Maria Christofidou, Solange Gonzalez Chiappe, Nathan Lea, Dipak Kalra, Fabrizio Orlandi and Declan O’Sullivan. Rare diseases: making environmental health studies’ data as open as possible. The 20th International Vasculitis and ANCA Workshop. 2022. <code class="red-codespan">Poster Abstract</code> <a href="https://vasculitis2022.org/" target="_blank">[Conference]</a> <a href="http://www.semantic-web-journal.net/content/evaluating-usability-semantic-health-data-framework-approach-and-study" target="_blank">[Publication]</a> <a href="https://raw.githubusercontent.com/navarral/anca2022-poster/main/Navarro-Gallinad_poster_landscape_ANCA_2022.pdf" target="_blank">[PDF]</a></li>
-					<p> </p>
-					<li> Albert Navarro-Gallinad, Maria Christofidou, Fabrizio Orlandi, Nathan Lea, Dipak Kalra and Declan O’Sullivan. Support for publishing environmental health data as open as possible. The Marie Curie Anual Conference (MCAA). 2022. <code class="red-codespan">Poster Abstract</code> <a href="https://www.mariecuriealumni.eu/conference-2022" target="_blank">[Conference]</a> <a href="https://github.com/navarral/mcaa2022-poster" target="_blank">[Publication]</a> <a href="https://raw.githubusercontent.com/navarral/mcaa2022-poster/main/Navarro-Gallinad_poster_MCAA_2022.pdf" target="_blank">[PDF]</a></li>
-					
-				<h3> 2021 </h3>
-					<li> Albert Navarro-Gallinad, Fabrizio Orlandi, Dipak Kalra, Xavier Rodó, Mark Little and Declan O’Sullivan. Rare disease: it’s all about combining data. The Marie Curie Anual Conference (MCAA). 2021. <code class="red-codespan">Poster Abstract</code> <a href="https://www.mariecuriealumni.eu/sites/default/files/2021-04/MCAA-Book-of-Abstracts-2021-v7.pdf" target="_blank">[Conference]</a> <a href="https://www.mariecuriealumni.eu/sites/default/files/2021-04/MCAA-Book-of-Abstracts-2021-v7.pdf" target="_blank">[Publication]</a> <a href="https://www.mariecuriealumni.eu/sites/default/files/2021-04/MCAA-Book-of-Abstracts-2021-v7.pdf" target="_blank">[PDF]</a></li>
-				<h3> 2020 </h3>
-					<li> Xavier Rodó, Albert Navarro-Gallinad, Tomoko Kojima, Joan Ballester and Sílvia Borràs. Sub-weekly cycle uncovers the hidden link of aerosols and their composition to Kawasaki disease. First European Congress on Kawasaki Disease (EUROKIDS). 2021. <code class="red-codespan">Oral Presentation</code> <a href="https://www.alphavisa.com/euro-kids/2020/index.php" target="_blank">[Conference]</a> </li>
-					<p> </p>
-					<li> Xavier Rodó, Albert Navarro-Gallinad, Tomoko Kojima, Joan Ballester and Sílvia Borràs. Particulate matter dynamics and chemistry drive
-Kawasaki disease epidemiology in Japan. The 10th International Conference on Children’s Health and the Environment (INCHES). 2020. <code class="red-codespan">Oral Presentation</code> <a href="https://inchesnetwork.net/conference-2020/" target="_blank">[Conference]</a> </li>
-					<p> </p>
-				<h3> 2018 </h3>
-					<li> Albert Navarro-Gallinad. Conference Speaker in the Nanoscience and Nanotechnology gathering in Spain with the intention to popularize this discipline with public engaging activities to students. 10 a la menos 9. (2018) <code class="red-codespan">Speaker</code> <a href="https://10alamenos9.es/" target="_blank">[Conference]</a></li>
-			</ol>
-		</section>
-		
-		<section id="awards" >
-			<h2> 7. Awards<a href="#awards"></a></h2>
-				2020 - Research Fellowship Marie Skłodowska-Curie International Training Network (MSCA-ITN)
-				<p> </p>
-				2017 - Thesis award of Sustainable Development from Universitat Autònoma de Barcelona
-		</section>
-		
-		<section id="teaching" >
-			<h2> 8. Teaching experience<a href="#teaching"></a></h2>
-				2020 – Present - Demonstrator in the practical labs and exams marking for undergraduates in the Engineering Design Project, Knowledge and Data Engineering modules in Trinity College Dublin
-				<p> </p>
-				2013 – 2017 Personal teacher in Natural Sciences and English for High School students
-		</section>
-		
 		  </div>
-		  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+			<div class="tab-pane fade" id="pills-research" role="tabpanel" aria-labelledby="pills-research-tab">
+				Work in progress...
+				<p></p>
+				<img src="assets/knowledgeScientist-diagram.png" alt="knowledgeScientist-diagram" width="70%" class="center">
+			</div>
+			<div class="tab-pane fade" id="pills-projects" role="tabpanel" aria-labelledby="pills-projects-tab">		
+				<h1>Projects</h1>
+				  <div class="row">
+					<div class="col-md-4">
+					  <div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="assets/helical-logo.jpg" alt="helical-logo" 
+						style="height: 225px; width: 100%; display: block;">
+						<div class="card-body">
+						  <h4>HELICAL</h4>
+						  <p class="card-text">
+							  Data Science challenge in rare autoimmune diseases (2019-2023)
+						  </p>
+						  <div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+							  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+							</div>
+							<small class="text-muted">PhD Researcher</small>
+						  </div>
+						</div>
+					  </div>
+					</div>
+					
+					<div class="col-md-4">
+					  <div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="assets/avert-logo.jpg" alt="avert-logo" 
+						style="height: 225px; width: 100%; display: block;">
+						<div class="card-body">
+						  <h4>AVERT</h4>
+						  <p class="card-text">
+							Impact of environmental factors and flare prediction in ANCA vasculitis (2018-2022)
+						  </p>
+						  <div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+							  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+							</div>
+							<small class="text-muted">PhD Researcher</small>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				   
+					<div class="col-md-4">
+					  <div class="card mb-4 box-shadow">
+						<img class="card-img-top" src="assets/kd-logo.png" alt="helical-logo" 
+						style="height: 225px; width: 100%; display: block;">
+						<div class="card-body">
+						  <h4>WINDBIOME</h4>
+						  <p class="card-text">
+							Aerial micro-biome diversity and their role in Kawasaki disease (2016-2018)
+						  </p>
+						  <div class="d-flex justify-content-between align-items-center">
+							<div class="btn-group">
+							  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+							</div>
+							<small class="text-muted">Research assistant</small>
+						  </div>
+						</div>
+					  </div>
+					</div>
+
+        
+          
+          </div>
+        
+			
+			</div>
+			<div class="tab-pane fade" id="pills-publications" role="tabpanel" aria-labelledby="pills-publications-tab">
+				<section id="publications">
+			<h1>Publications</h1>
+			<ol>
+				<h2> 2022 </h2>
+					<li> Navarro-Gallinad, Albert, Fabrizio Orlandi, Jennifer Scott, Mark Little and Declan O'Sullivan. 
+					Evaluating the usability of a semantic environmental health data framework: approach and study. 
+					Semantic Web Journal. 2022. 
+					<code class="red-codespan">Top Web Journal Article</code> 
+					<a href="https://content.iospress.com/articles/semantic-web/sw223212" target="_blank">[Publication]</a> 
+					<a href="https://content.iospress.com/articles/semantic-web/sw223212.pdf" target="_blank">[PDF]</a> 
+					</li>
+					
+					<li> Scott, Jennifer, Enock Havyarimana, Albert Navarro-Gallinad, et al. 
+					The association between ambient UVB dose and ANCA-associated vasculitis relapse and onset. 
+					Arthritis Res Ther 24, 147 (2022). 
+					<code class="red-codespan">Journal Article</code> 
+					<a href="https://doi.org/10.1186/s13075-022-02834-6" target="_blank">[Publication]</a> 
+					<a href="https://arthritis-research.biomedcentral.com/counter/pdf/10.1186/s13075-022-02834-6.pdf" target="_blank">[PDF]</a>
+					</li>
+					
+					<li> Albert Navarro-Gallinad, Maria Christofidou, Solange Gonzalez Chiappe, Nathan Lea, Dipak Kalra, 
+					Fabrizio Orlandi and Declan O’Sullivan. Rare diseases: making environmental health studies’ data as 
+					open as possible. The 20th International Vasculitis and ANCA Workshop. 2022. 
+					<code class="red-codespan">Poster Abstract</code> 
+					<a href="https://vasculitis2022.org/" target="_blank">[Conference]</a> 
+					<a href="https://raw.githubusercontent.com/navarral/anca2022-poster/main/Navarro-Gallinad_poster_landscape_ANCA_2022.pdf" target="_blank">[Publication]</a> 
+					<a href="https://raw.githubusercontent.com/navarral/anca2022-poster/main/Navarro-Gallinad_poster_landscape_ANCA_2022.pdf" target="_blank">[PDF]</a>
+					</li>
+					
+					<li> Albert Navarro-Gallinad, Maria Christofidou, Fabrizio Orlandi, Nathan Lea, Dipak Kalra and Declan O’Sullivan. 
+					Support for publishing environmental health data as open as possible. The Marie Curie Anual Conference (MCAA). 
+					2022. <code class="red-codespan">Poster Abstract</code> 
+					<a href="https://www.mariecuriealumni.eu/conference-2022" target="_blank">[Conference]</a> 
+					<a href="https://github.com/navarral/mcaa2022-poster" target="_blank">[Publication]</a> 
+					<a href="https://raw.githubusercontent.com/navarral/mcaa2022-poster/main/Navarro-Gallinad_poster_MCAA_2022.pdf" target="_blank">[PDF]</a>
+					</li>
+					
+				<h2> 2021 </h2>
+					<li> Navarro-Gallinad, Albert, Fabrizio Orlandi, and Declan O'Sullivan. 
+					Enhancing Rare Disease Research with Semantic Integration of Environmental and Health Data. 
+					The 10th International Joint Conference on Knowledge Graphs. 2021. 
+					<code class="red-codespan">Best conference paper nomination</code> 
+					<a href="https://doi.org/10.1145/3502223.3502226" target="_blank">[Publication]</a> 
+					<a href="http://www.tara.tcd.ie/bitstream/handle/2262/97660/Navarro-Gallinad_etal_IJCKG2021_CameraReady.pdf?sequence=1" target="_blank">[PDF]</a>
+					</li>
+					
+					<li> Navarro-Gallinad, Albert, Fabrizio Orlandi, Dipak Kalra, Xavier Rodó, Mark Little and Declan O’Sullivan. 
+					Rare disease: it’s all about combining data. The Marie Curie Anual Conference (MCAA). 2021. 
+					<code class="red-codespan">Poster Abstract</code> 
+					<a href="https://www.mariecuriealumni.eu/sites/default/files/2021-04/MCAA-Book-of-Abstracts-2021-v7.pdf" target="_blank">[Conference]</a> 
+					<a href="https://www.mariecuriealumni.eu/sites/default/files/2021-04/MCAA-Book-of-Abstracts-2021-v7.pdf" target="_blank">[Publication]</a> 
+					<a href="https://www.mariecuriealumni.eu/sites/default/files/2021-04/MCAA-Book-of-Abstracts-2021-v7.pdf" target="_blank">[PDF]</a>
+					</li>
+				
+				<h2> 2020 </h2>
+					<li> Navarro-Gallinad, Albert, Alan Meehan, and Declan O'Sullivan. 
+					The Semantic Combining for Exploration of Environmental and Disease Data Dashboard for Clinician Researchers. 
+					VOILA@ ISWC. 2020. <code class="red-codespan">Premier Workshop</code> 
+					<a href="http://voila2020.visualdataweb.org/" target="_blank">[Publication]</a> 
+					<a href="http://ceur-ws.org/Vol-2778/paper7.pdf" target="_blank">[PDF]</a>
+					</li>
+					
+					<li> Xavier Rodó, Albert Navarro-Gallinad, Tomoko Kojima, Joan Ballester and Sílvia Borràs. 
+					Sub-weekly cycle uncovers the hidden link of aerosols and their composition to Kawasaki disease. 
+					First European Congress on Kawasaki Disease (EUROKIDS). 2021. 
+					<code class="red-codespan">Oral Presentation</code> 
+					<a href="https://www.alphavisa.com/euro-kids/2020/index.php" target="_blank">[Conference]</a> 
+					</li>
+
+					<li> Xavier Rodó, Albert Navarro-Gallinad, Tomoko Kojima, Joan Ballester and Sílvia Borràs. 
+					Particulate matter dynamics and chemistry drive Kawasaki disease epidemiology in Japan. 
+					The 10th International Conference on Children’s Health and the Environment (INCHES). 2020. 
+					<code class="red-codespan">Oral Presentation</code> 
+					<a href="https://inchesnetwork.net/conference-2020/" target="_blank">[Conference]</a> 
+					</li>				
+					
+				<h2> 2019 </h2>
+					<li> Ballester, J., Borràs, S., Curcoll, R., Navarro-Gallinad, A., Pozdniakova, S., Cañas, L., Burns, J.C. and Rodó, X. 
+					On the interpretation of the atmospheric mechanism transporting the environmental trigger of Kawasaki Disease. 
+					PloS one 14.12 (2019) <code class="red-codespan">Formal comment</code> 
+					<a href="https://doi.org/10.1371/journal.pone.0226402" target="_blank">[Publication]</a> 
+					<a href="https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0226402&type=printable" target="_blank">[PDF]</a>
+					</li>
+				<h2> 2018 </h2>
+					<li> Albert Navarro-Gallinad. Conference Speaker in the Nanoscience and Nanotechnology gathering 
+					in Spain with the intention to popularize this discipline with public engaging activities to students. 
+					10 a la menos 9. (2018) <code class="red-codespan">Speaker</code> 
+					<a href="https://10alamenos9.es/" target="_blank">[Conference]</a></li>
+			
+				</ol>
+			</section>
+			
+			
+			</div>
+			<div class="tab-pane fade" id="pills-games" role="tabpanel" aria-labelledby="pills-games-tab">...</div>
+
 		</div>
 		<!--/.Tabs-->
 		
