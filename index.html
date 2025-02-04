@@ -1,163 +1,255 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- Bootstrap CSS -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-	
-	<!-- Add icon library -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	
-	  
-	<style>
-		body {
-		  font-family: sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TinyTrend - A Marie Skłodowska-Curie Actions (MSCA) postdoctoral fellowship research project. Grant ID: 101153708">
+	<meta name="keywords" content="MSCA, Marie Skłodowska-Curie Actions, postdoctoral fellowship, research, TinyTrend, EU funded research">
+    <title>TinyTrend</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        .layout {
+            min-height: 100vh;
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+        }
+
+        .topbar {
+            background: #009DE0;
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .profile img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            line-height: 1.2;
+        }
+
+        .profile-info h2 {
+            font-size: 1.2rem;
+        }
+
+        .profile-info p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #3498db;
+        }
+
+        .main-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .featured-post {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .post-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .post-card.expanded {
+            grid-column: 1 / -1;
+            margin: 1rem 0;
+        }
+
+        .post-content {
+            max-height: 100px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .post-card.expanded .post-content {
+            max-height: 2000px;
+        }
+
+        .expand-btn {
+            background: none;
+            border: none;
+            color: #3498db;
+            cursor: pointer;
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .expand-btn:hover {
+            color: #2980b9;
+        }
+
+        .expand-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .post-card.expanded .expand-btn i {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .topbar {
+                flex-direction: column;
+                padding: 1rem 0.5rem;
+                gap: 1rem;
+            }
+
+            .profile {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .post-card-dis {
+			opacity: 0.6;
+			pointer-events: none;
+			background: #f0f3f4;
+			border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 		}
-				
-		.main {
-		  margin-left: 5%; 
-		  margin-right: 5%;
-		  font-size: calc(10px + 1vh);
+		
+		footer {
+			margin-top: 4rem;
+			padding: 2rem;
+			text-align: center;
 		}
 
-		h1 {
-			padding-top: 0.5rem;
-			padding-bottom: 0.5rem;
+		.footer hr {
+			margin: 1rem 0;
+		}
+		
+		.project-intro {
+			background: white;
+			border-radius: 8px;
+			# padding: 0.5rem;
+			margin-bottom: 2rem;
+			#box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 		}
 
-		h2,h3,h4 {	
-			padding-top: 0.5rem;
-			padding-bottom: 0.5rem;
-			color: #005A9C;
+		.project-intro h2 {
+			margin-bottom: 1rem;
 		}
 
-		.bd-callout {
-		  padding: 1.25rem;
-		  margin-top: 1.25rem;
-		  margin-bottom: 1.25rem;
-		  border: 1px solid #eee;
-		  border-left-width: .25rem;
-		  border-radius: .25rem;
-		}
-		.bd-callout-info {
-		  border-left-color: #2e86c1 ;
-		  border-left-width: 0.5rem;
-		}
-		.bd-callout-info { @include bs-callout-variant($bd-info); }
-
-		.fa {
-		  padding: 0.3rem;
-		  text-align: center;
-		  text-decoration: none;
-		  margin: 5px 2px;
+		.project-intro p {
+			margin-bottom: 0.5rem;
 		}
 
-		.fa:hover {
-			opacity: 0.7;
+		.project-intro a {
+			color: #3498db;
+			text-decoration: none;
 		}
 
-		.fa-users {
-		  background: #82e0aa;
-		  color: white;
-		}
-		
-		
-		.fa-info {
-		  background:  #d4e157;
-		  color: white;
-		  padding-right: 0.6rem;
-		  padding-left: 0.6rem;
+		.project-intro a:hover {
+			text-decoration: underline;
 		}
 
-		.fa-linkedin {
-		  background: #007bb5;
-		  color: white;
+		.funding-info {
+			margin-top: 1rem;
+			color: #666;
+			font-size: 0.9rem;
 		}
 
-		.fa-github {
-		  background: #24292f;
-		  color: white;
+		.funding-info a {
+			color: #3498db;
+			text-decoration: none;
 		}
 
-		.fa-user-secret {
-		  background:   #c39bd3 ;
-		  color:  white;
+		.funding-info a:hover {
+			text-decoration: underline;
 		}
 		
-		.green-codespan {
-		  color:    #1e8449 ;
-		  background-color:   #e9f7ef  ;
-		  border-radius: 0.5rem;
-		  padding: 0.25rem;
-		  /* font-size: 110%;*/
-		}
-		
-		.blue-codespan {
-		  color:  #1f618d;
-		  background-color:  #eaf2f8;
-		  border-radius: 0.5rem;
-		  padding: 0.25rem;
-		  /* font-size: 110%;*/
-		}
-		
-		.section-codespan {
-		  color:  #1f618d;
-		  background-color:  transparent;
-		  border-radius: 0.5rem;
-		  padding: 0.25rem;
-		  /* font-size: 110%;*/
-		}
-		
-		.lightblue-codespan {
-		  color:   #03a9f4 ;
-		  background-color:  #e1f5fe;
-		  border-radius: 0.5rem;
-		  padding: 0.25rem;
-		  /* font-size: 110%;*/
-		}
-		
-		.red-codespan {
-		  color:   #a93226 ;
-		  background-color: #fadbd8 ;
-		  border-radius: 0.5rem;
-		  padding: 0.25rem;
-		  /* font-size: 110%;*/
-		}
-		
-		.orange-codespan {
-		  color:   #d35400 ;
-		  background-color:   #f6ddcc  ;
-		  border-radius: 0.5rem;
-		  padding: 0.25rem;
-		  /* font-size: 110%;*/
-		}
-		
-		.grey-codespan {
-		  color:   #515a5a  ;
-		  background-color:  #ccd1d1  ;
-		  border-radius: 0.5rem;
-		  padding: 0.25rem;
-		  /* font-size: 110%;*/
-		}
-		
-		.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-		  color: white;
-		  background-color:  #343a40 ;
-		}
-		
-		.nav-pills .nav-link, .nav-pills .show > .nav-link {
-		  color: #343a40;
-		  background-color:  white ;
-		}
+		#more {display: none;}
 		
 		/* Basic CSS for styling */
 		.image-container {
 			display: flex;
 			align-items: center;
 		}
+		
 		.image-container img {
 			/* Adjust the width of the image as needed max-width: 50%;  */
 			margin-right: 20px; /* Add spacing between the image and paragraph */
@@ -180,334 +272,141 @@
 			}
 		}
 		
+		p {padding-top: 10px;}
+		h2 {padding-top: 10px;}
 		
-		.fa-ul li {
-			margin-bottom: 1rem; /* Space between list items */
-		}
-		
-		
-		.word-list {
-		  list-style-type: none; /* Remove the default bullet points */
-		}
-		
-		.word-list li {
-		  margin-bottom: 1rem; /* Add a bottom margin to create space between list items */
-		}
-
-		.word-list li::before {
-		  content: attr(data-content);
-		  margin-right: 8px;
-		  font-weight: bold;
-		}
-		
-		.nested-list li {
-			margin-bottom: 0.2rem; /* Space between list items */
-		}
-		
-		.row {
-		  display: flex;
-		  margin-left: 0.2rem;
-		}
-
-		.card {
-		  display: flex;
-		  border: 1px solid #ccc;
-		  margin-bottom: 1rem;
-		  flex-direction: row; /* Ensure items are in a row layout */
-		  
-		}
-		
-		.figure {
-		  flex: 1;
-		  padding: 10px;
-		}
-
-		.figure img {
-		  width: 16rem;
-		  height: 8rem;
-		}
-		.text {
-		  flex: 2;
-		  padding: 10px;
-		}
-
-	</style>
-
- 
-<title>Albert Navarro-Gallinad</title>
- 
+    </style>
 </head>
+<body>
+    <div class="layout">
+        <header class="topbar">
+            <div class="profile">
+                <img src="/api/placeholder/150/150" alt="Icon">
+                <div class="profile-info">
+                    <h2>TinyTrend</h2>	
+                    <p>Dr. Albert Navarro-Gallinad • <a href="https://humantechnopole.it/it/gruppi-di-ricerca/zuccolo-group/" style="color: white;">Human Technopole</a> </p>
+                </div>
+            </div>
+            <div class="social-links">
+				<img src="" style= "color: white" alt= "albert.navarro@fht.org">
+                <a href="https://www.linkedin.com/in/albert-navarro-gallinad/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/navarral" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://orcid.org/0000-0002-2336-753X" target="_blank"><i class="fas fa-info"></i></a>
+            </div>
+        </header>
 
-<body> 
-	
-	
-
-	<div class="main">
-		
-	<!-- Tabs -->	
-		<ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
-		  <li class="nav-item" role="presentation">
-			<button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
-		  </li>
-		  <li class="nav-item" role="presentation">
-			<button class="nav-link" id="pills-about-tab" data-bs-toggle="pill" data-bs-target="#pills-about" type="button" role="tab" aria-controls="pills-about" aria-selected="false">About</button>
-		  </li>
-		  <li class="nav-item" role="presentation">
-			<button class="nav-link" id="pills-projects-tab" data-bs-toggle="pill" data-bs-target="#pills-projects" type="button" role="tab" aria-controls="pills-projects" aria-selected="false">Projects</button>
-		  </li>
-		  <li class="nav-item" role="presentation">
-			<button class="nav-link" id="pills-publications-tab" data-bs-toggle="pill" data-bs-target="#pills-publications" type="button" role="tab" aria-controls="pills-publications" aria-selected="false">Publications</button>
-		  </li>
-		  <li class="nav-item" role="presentation">
-			<button class="nav-link" id="pills-awards-tab" data-bs-toggle="pill" data-bs-target="#pills-awards" type="button" role="tab" aria-controls="pills-awards" aria-selected="false">Awards</button>
-		  </li>
-		  <li class="nav-item" role="presentation">
-			<button class="nav-link" id="pills-teaching-tab" data-bs-toggle="pill" data-bs-target="#pills-teaching" type="button" role="tab" aria-controls="pills-teaching" aria-selected="false">Teaching</button>
-		  </li>
-		  <li class="nav-item" role="presentation">
-			<button class="nav-link" id="pills-games-tab" data-bs-toggle="pill" data-bs-target="#pills-games" type="button" role="tab" aria-controls="pills-games" aria-selected="false">Outreach</button>
-		  </li>
-		</ul>
-		<hr title="content separator">
-		
-		<div class="tab-content text-justified" id="pills-tabContent">
-		  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-			  <h1>Dr. <b>Albert</b> Navarro-Gallinad</h1>	
-				<section align="justify">
-					<div class="image-container">
-						<img src="assets/navarro-1024x1024.jpg" alt="ANGPhoto" 
-						style="border-radius: 8%; margin-left: auto;  margin-right: 1em; max-height: 40vh" >
-						<p>
-						I am interested in understanding how being exposed to certain environments can affect children's health, 
-						and my goal is to find ways to reduce their exposure to harmful surroundings. 
-						That is why I am a <b>Health Data Scientist (Postdoc)</b> in the maternal and child health group at the 
-						 <a href="https://humantechnopole.it/">Human Technopole</a> (Milan, Italy), where I develop methods
-						 to explore how environmental factors influence human health.
-						 <br><br>
-						 In my free time, I enjoy traveling the world and immersing myself in different cultures, 
-						 which always provides me with fresh perspectives.
-						 <br><br>
-						 In 2024, I was awarded with a <b>Marie Skłodowska-Curie Actions (MSCA) Postdoctoral Fellowship</b> to 
-						 identify which environmental factors contribute to premature births to help inform future prevention policies. 
-						 <a href="https://navarral.github.io/TinyTrend/">View MSCA project</a>
+        <main class="main-content">
+			<div class="project-intro">
+				<h2>TinyTrend research project</h2>
+				<p>Welcome to TinyTrend! This research project aims to identify new environmental causes of premature birth by integrating text mining with epidemiological analyses. The project will combine population-wide health data from Lombardy, Italy, comprising 1 million pregnancies between 2012-2023, with insights derived from AI about changes in environmental policies in the same period. This work is funded by the European Union under the Marie Skłodowska-Curie Actions (MSCA) postdoctoral fellowship program (ID: <a href="https://cordis.europa.eu/project/id/101153708">101153708</a>).</p>
+			</div>
 			
-						  
-						 </p>
-					</div>
+            <article class="featured-post" data-status="active">
+                <span class="post-date">January 31, 2025</span>
+                <h1>Jouney from Nanotechnology to Health Data Science</h1>
+                
+                <div class="image-container">
+					<img src="assets/figure_post1.jpg" alt="EU_journey" 
+							style="border-radius: 8%; margin-left: auto;  margin-right: 1em; max-height: 40vh" >
+					<p>A researcher working with health data needs to gather, analyse and link information about people and their health to help improve healthcare and make it better for everyone. These tasks require a combination of Maths, Statistics, technology and knowledge about the health domain to manage the very large amounts of different health datasets with pieces of information about our health.
+					<br>
+					<br>
+					In this blog, I'll touch briefly on some key chapters of my journey. If any part of my story resonates with you, let me know as I’d be happy to expand on it in a full blog post if it would be helpful!</p>
+						
+				</div>
+				<span id="dots">[...]</span>
+					<span id="more">
 					
-				</section>		  
-			  <p></p>
-			  <a href="assets/Resume_AlbertNavarroGallinad_Dec2022.pdf" class="btn btn-outline-dark btn-lg" >Resume</a>
-			  <a href="assets/CV_AlbertNavarroGallinad_Dec2022.pdf"  class="btn btn-outline-dark btn-lg"  >CV</a>
-			  <p></p>
-			   
-			  
-			  
-		  </div>
-		  <div class="tab-pane fade" id="pills-about" role="tabpanel" aria-labelledby="pills-about-tab">
-		  
-			   
-		<section id="about" >
-			<h1>About</h1>
-			<h2>Summary of qualifications</h2>
-			<ul>
-				<li>PhD-level Computer Scientist (Artificial Intelligence) with a proven track record of delivering high-quality, 
-					scientific results through critical analysis and interpretation.</li>
-				<li>Exceptional written and oral communication skills: 4 first-author publications in peer-reviewed 
-					journals and conferences, 2 co-authorship papers, 5 data and code outputs, 
-					and 6 oral presentations at international conferences.</li>
-				<li>Proven experience in developing expert systems to address complex data linkage challenges in the healthcare domain.</li>
-			</ul>
-			<h2>Academic journey</h2>	
-			<ul class="word-list">
-			  <li data-content="2019-2023"> <b>PhD in Computer Science, Trinity College Dublin</b>
-				  <ul class="nested-list">
-					  <li>Project: address the data interoperability challenge for researchers studying the influence of environmental factors 
-						associated with a disease using a Knowledge Graph approach.
-						Thesis available at <a href="http://hdl.handle.net/2262/102971" target="_blank">http://hdl.handle.net/2262/102971</a></li>
-					  <li>Supervisors: Declan O’Sullivan and Fabrizio Orlandi</li>
-					  <li>Supervisory panel: Dipak Kalra (i~HD), Xavier Rodó (ISGlobal) and Mark Little (TCD)</li>
-				  </ul>				
-			  </li>
-			  <li data-content="2017-2018"> <b>MSc Modelling for Science and Engineering, Universitat Autònoma Barcelona.</b>
-				  <ul class="nested-list">
-					  <li>Specialization in Complex Systems with courses in data modelling for Big Data.</li>
-					  <li>Participated in the Kawasaki disease project with the aim of comprehending Kawasaki disease through aerosol optical 
-						measurements supervised by Dr. Xavier Rodó, ISGlobal.</li>
-				  </ul>	
-				</li>
-			  <li data-content="2013-2017"> <b>BA Nanotechnology, Universitat Autònoma Barcelona and Erasmus Mundus Belgium</b>
-				<ul class="nested-list">
-					  <li>Interdisciplinary training in Chemistry, Physics, Biology and Mathematics.</li>
-					  <li>Bachelor’s project in Microwave assisted synthesis of VO2 nanocrystals</li>
-				</ul>	
-			  </li>
-			</ul>
-		</section>
-		
-		</div>
-		<div class="tab-pane fade" id="pills-projects" role="tabpanel" aria-labelledby="pills-projects-tab">
-		<h1>Projects</h1>
-			<div class="row">
-			  <div class="card">
-				<div class="figure">
-				  <img src="assets/helical-logo.jpg" alt="helical-logo" >
-				</div>
-				<div class="text">
-				  <h3>HELICAL &mdash; PhD</h3>
-				  <p>Data Science challenge in rare autoimmune diseases (2019-2023)</p>
-				  <a href="https://helical-itn.eu/" class="btn btn-sm btn-outline-secondary" target="_blank">View</a>
-				</div>
-			  </div>
-			</div>
-			<div class="row">
-			  <div class="card">
-				<div class="figure">
-				  <img src="assets/avert-logo.jpg" alt="avert-logo" >
-				</div>
-				<div class="text">
-				  <h3>AVERT &mdash; PhD</h3>
-				  <p>Impact of environmental factors and flare prediction in ANCA vasculitis (2018-2022)</p>
-				  <a href="https://www.tcd.ie/medicine/thkc/our-research/chronic-disease-informatics-group/avert/" class="btn btn-sm btn-outline-secondary" target="_blank">View</a>
-				</div>
-			  </div>
-			</div>
-			<div class="row">
-			  <div class="card">
-				<div class="figure">
-				  <img src="assets/kd-logo.png" alt="kd-logo" >
-				</div>
-				<div class="text">
-				  <h3>WINDBIOME &mdash; Research assistant</h3>
-				  <p>Aerial micro-biome diversity and their role in Kawasaki disease (2016-2018)</p>
-				  <a href="http://www.kawasaki-disease.com/" class="btn btn-sm btn-outline-secondary" target="_blank">View</a>
-				</div>
-			  </div>
-			</div>	
-          
-        </div>
-        
-			
-			
-			<div class="tab-pane fade" id="pills-publications" role="tabpanel" aria-labelledby="pills-publications-tab">
-				<section id="publications">
-			<h1>Publications</h1>
-			<h2>Peer-reviewed journal and conference papers</h2>
-			<ol>
-			  <li>Rodó, X.*, <b>Navarro-Gallinad, A.*</b>, Kojima, T., Morguí, JA, Borràs, S., and Fontal, A. (2023) ‘Sub-weekly signatures relate ultrafine aerosols enriched in metals from intensive farming and urban pollution to Kawasaki Disease’, Environmental Research Letters, 18(7), p. 074011. <a href="https://doi.org/10.1088/1748-9326/acd798" target="_blank">https://doi.org/10.1088/1748-9326/acd798</a>.</li>
-			  
-			  <li><b>Navarro-Gallinad, A.</b>, Orlandi, F., Scott, J., Little, M., and O’Sullivan, D. (2022). Evaluating the usability of a semantic environmental health data framework: Approach and study. Semantic Web, 14(5), pages 787-810. <a href="https://doi.org/10.3233/SW-223212" target="_blank">https://doi.org/10.3233/SW-223212</a>.</li>
-			  
-			  <li><b>Navarro-Gallinad, A.</b>, Orlandi, F., and O’Sullivan, D. (2021). Enhancing Rare Disease Research with Semantic Integration of Environmental and Health Data. In The 10th International Joint Conference on Knowledge Graphs, IJCKG’21, pages 19–27, New York, NY, USA. Association for Computing Machinery. <a href="https://doi.org/10.1145/3502223.3502226" target="_blank">https://doi.org/10.1145/3502223.3502226</a>.</li>
-			  
-			  <li>Scott, J., Havyarimana, E., <b>Navarro-Gallinad, A.</b>, White, A., Wyse, J., Van Geffen, J., Van Weele, M., Buettner, A., Wanigasekera, T., Walsh, C., Aslett, L., Kelleher, J., Power, J., Ng, J., O’Sullivan, D., Hederman, L., Basu, N., Little, M., and Zgaga, L. on behalf of the RKD and UKIVAS groups. (2022) The association between ambient UVB dose and ANCA-associated vasculitis relapse and onset. Arthritis Res Ther 24, 147. <a href="https://doi.org/10.1186/s13075-022-02834-6" target="_blank">https://doi.org/10.1186/s13075-022-02834-6</a>. My contribution as a co-author included the development of maps to present and study the spatial distribution of people with ANCA associated vasculitis and the review of the data aspects in the manuscript.</li>
-			  
-			  <li><b>Navarro-Gallinad, A.</b>, Meehan, A. and O’Sullivan, D. The Semantic Combining for Exploration of Environmental and Disease Data Dashboard for Clinician Researchers, In Proceedings of the 5th International Workshop on Visualization and Interaction for Ontologies and Linked Data co-located with the 19th International Semantic Web Conference, VOILA@ISWC 2020. 2778 13. <a href="http://ceur-ws.org/Vol-2778/paper7.pdf" target="_blank">http://ceur-ws.org/Vol-2778/paper7.pdf</a></li>
-			  
-			  <li>Ballester, J., Borràs, S., Curcoll, R., <b>Navarro-Gallinad, A.</b>, Pozdniakova, S., Cañas, L., Burns, J. and Rodó, X. (2019) On the interpretation of the atmospheric mechanism transporting the environmental trigger of Kawasaki Disease. PLoS ONE, 14(12): e0226402. <a href="https://doi.org/10.1371/journal.pone.0226402" target="_blank">https://doi.org/10.1371/journal.pone.0226402</a>. My contribution as a co-author was in terms of reviewing and editing the manuscript.</li>
-			</ol>
-			<h2>Data and software outputs</h2>
-			
-			<ol>
-			  <li><b>Navarro-Gallinad, A.</b> SERDIF (2023). <a href="https://w3id.org/serdif" target="_blank">https://w3id.org/serdif</a><br>The Semantic Environmental and Rare disease Data Integration Framework (SERDIF) seeks to enable the data linkage between health events and environmental data for health data researchers.</li>
-			  
-			  <li><b>Navarro-Gallinad, A.</b>, Orlandi, F., and O’Sullivan, D. Environmental data associated to particular health events example dataset (Version 20230307) [Data set] (2023). Zenodo. <a href="https://doi.org/10.5281/zenodo.5544257" target="_blank">https://doi.org/10.5281/zenodo.5544257</a><br>This published dataset includes an example output for environmental data (i.e. climate and pollution) linked with individual events through location and time (as a spreadsheet, graph, and interactive report).</li>
-			  
-			  <li>Christofidou, M.* and <b>Navarro-Gallinad, A*.</b> HELICAL Open Research Guidelines (2022). Zenodo. <a href="https://doi.org/10.5281/zenodo.7214802" target="_blank">https://doi.org/10.5281/zenodo.7214802</a><br>A set of recommendations and step-by-step instructions to help Early Stage Researchers and experts share their findings (whether aggregated data, software, or algorithms) as open as possible in accordance with the relevant data protection rules and legislation.</li>
-			  
-			  <li><b>Navarro-Gallinad, A.</b> NUTS-RDF in GeoSPARQL (20220503T150000) [Data set] (2022). Zenodo. <a href="https://doi.org/10.5281/zenodo.6514296" target="_blank">https://doi.org/10.5281/zenodo.6514296</a><br>The published dataset includes the NUTS (Nomenclature of territorial units for statistics classification) representing the regions in the EU as GeoSPARQL structures using a Construct SPARQL query (as a graph).</li>
-			  
-			  <li><b>Albert Navarro-Gallinad, A.</b> Weather and Air Quality data for Ireland as RDF data cube (20211221T120000) [Data set] (2021). Zenodo. <a href="https://doi.org/10.5281/zenodo.5799118" target="_blank">https://doi.org/10.5281/zenodo.5799118</a>. The published dataset includes weather and air quality data for Ireland as RDF data cube.</li>
-			</ol>
-			
-			<h2>Presentations at International and National Conferences</h2>			
-			<ol>
-			  <li><b>SISMEC 2023:</b> 12th Italian Society for Statistics, Medicine and Clinical Epidemiology | Abstract oral presentation poster: an interoperable, usable and open framework for linking environmental and health data | <a href="https://www.congresso.sismec.info/images/congresso_2023/abstract/21settembre/pomeriggio/Epidemiologia1/navarro-gallinad-albert.pdf" target="_blank">https://www.congresso.sismec.info/images/congresso_2023/abstract/21settembre/pomeriggio/Epidemiologia1/navarro-gallinad-albert.pdf</a></li>
-			  
-			  <li><b>Autoimmunity and the exposome 2023:</b> HELICAL meeting open to the public | Oral presentation: Knowledge graphs in patient-environment linkage | <a href="https://helical-itn.eu/blog/posts/barcelona_meeting.html" target="_blank">https://helical-itn.eu/blog/posts/barcelona_meeting.html</a></li>
-			  
-			  <li><b>ANCA 2022:</b> 20th International Vasculitis and ANCA Workshop 2022 | Abstract poster: Rare diseases: making environmental health studies’ data as open as possible | <a href="https://raw.githubusercontent.com/navarral/anca2022-poster/main/Navarro-Gallinad_poster_landscape_ANCA_2022.pdf" target="_blank">https://raw.githubusercontent.com/navarral/anca2022-poster/main/Navarro-Gallinad_poster_landscape_ANCA_2022.pdf</a></li>
-			  
-			  <li><b>MCAA 2022:</b> Marie Curie Alumni Association 2022 Annual conference | Abstract poster: Support for publishing environmental health data as open as possible | <a href="https://doi.org/10.5281/zenodo.6608826" target="_blank">https://doi.org/10.5281/zenodo.6608826</a></li>
-			  
-			  <li><b>MCAA 2021:</b> Marie Curie Alumni Association 2021 Annual conference | Abstract poster: Rare disease: it’s all about combining data | <a href="https://doi.org/10.5281/zenodo.4650065" target="_blank">https://doi.org/10.5281/zenodo.4650065</a></li>
-			  
-			  <li><b>EUROKIDS 2020:</b> First European Congress on Kawasaki Disease | Abstract oral presentation: Sub-weekly cycle uncovers the hidden link of aerosols and their composition to Kawasaki disease | <a href="https://www.alphavisa.com/euro-kids/2021/program2.php" target="_blank">https://www.alphavisa.com/euro-kids/2021/program2.php</a></li>
-			  
-			  <li><b>INCHES 2020:</b> The 10th International Conference on Children’s Health and the Environment | Abstract oral presentation: Particulate matter dynamics and chemistry drive Kawasaki disease epidemiology in Japan | <a href="https://inchesnetwork.net/conference-2020/" target="_blank">https://inchesnetwork.net/conference-2020/</a></li>
-			</ol>
-			
-			<h2>Organisation of international conferences</h2>
-			<ul class="word-list">
-				<li data-content="2022-2023"> <b>Reviewer in the Programme Committee for a premier venue for Human Computer Interaction related with Knowledge Graphs</b>
-					  <ul class="nested-list">
-						  <li>9th and 10th International Workshop on Visualization and Interaction for Ontologies and Linked Data (VOILA) co-located with the 21st and 22nd International Semantic Web Conference (ISWC)</li>
-						  <li><a href="http://voila2022.visualdataweb.org/" target="_blank">http://voila2022.visualdataweb.org/</a> | 
-						  <a href="http://voila2023.visualdataweb.org/" target="_blank">http://voila2023.visualdataweb.org/</a></li>
-					  </ul>	
-				</li>
-			</ul>
-			</section>
-			</div>
-			
-			<div class="tab-pane fade" id="pills-awards" role="tabpanel" aria-labelledby="pills-awards-tab">
-				<h1>Awards</h1>
-				<ul class="word-list">
-					<li data-content="2023">Education and Public Engagement award from the MSCA-ITN coordinators and nominated for all the available awards</li>
-					<li data-content="2022">Early Stage Researcher recognition award nomination at the ADAPT centre</li>
-					<li data-content="2021">Best conference paper nomination in the 10th International Joint Conference on Knowledge Graphs</li>
-					<li data-content="2019">Research doctoral fellowship Marie Skłodowska-Curie International Training Network (MSCA-ITN)</li>
-					<li data-content="2017">Bachelor’s thesis award of Sustainable Development from Universitat Autònoma de Barcelona</li>
-				</ul>
-			</div>
-			
-			<div class="tab-pane fade" id="pills-teaching" role="tabpanel" aria-labelledby="pills-teaching-tab">
-				<h1>Teaching experience</h1>
-				<ul class="word-list">
-					<li data-content="2020-2023">Teaching experience as demonstrator in practical labs for undergraduates in Knowledge and Data Engineering modules in Trinity College Dublin</li>
-					<li data-content="2013-2017">Personal teacher in Natural Sciences and English for High School students</li>
-				</ul>
-			</div>
-			
-			<div class="tab-pane fade" id="pills-games" role="tabpanel" aria-labelledby="pills-games-tab">
-				<h1>Outreach</h1>
-				<h2>Education and Public Engagement activities</h2>
-				<ol>
-				  <li>Conference speaker in the Vasculitis Patient conference (2023) to explain in simple terms our research on how the environment can affect ANCA-associated vasculitis. <a href="https://www.youtube.com/watch?v=W_TVWSGYHA4&t=4s" target="_blank">https://www.youtube.com/watch?v=W_TVWSGYHA4&t=4s</a></li>
-				  
-				  <li>Participated in the HELICAL ITN video (2022) to make our research more understandable, relatable, and impactful to a broader audience bridging the gap between academia and the general public. <a href="https://www.youtube.com/watch?v=Cv96im10QLM" target="_blank">https://www.youtube.com/watch?v=Cv96im10QLM</a></li>
-				  
-				  <li>Designed an interactive game for Researchers’ Night 2022 to demonstrate how medical professionals work with computer scientists to better understand how the quality of the air around us affects our health. <a href="https://www.adaptcentre.ie/news-and-events/adapt-programme-at-start-european-researchers-night-2022" target="_blank">https://www.adaptcentre.ie/news-and-events/adapt-programme-at-start-european-researchers-night-2022</a></li>
-				  
-				  <li>Participated as a speaker in the Vasculitis Ireland Awareness talk show and interactive Q&A session (2022) for explaining our research in ANCA-associated vasculitis. <a href="https://www.youtube.com/watch?v=mhECEA-Q_Zk" target="_blank">https://www.youtube.com/watch?v=mhECEA-Q_Zk</a></li>
-				  
-				  <li>Led four pub quizzes (2020, 2021) to raise the awareness of rare diseases in collaboration with Vasculitis Ireland Awareness (patient cohort, <a href="https://vasculitis-ia.org/" target="_blank">https://vasculitis-ia.org/</a>), Northern Ireland rare disease partnership (high school students and postgraduates in health sciences, <a href="https://nirdp.org.uk/" target="_blank">https://nirdp.org.uk/</a>) and Vifor (company employees, <a href="https://www.viforpharma.ch/" target="_blank">https://www.viforpharma.ch/</a>).</li>
-				  
-				  <li>Designed an interactive game for Researchers’ Night 2021 to present how researchers apply data protection regulations to work with rare disease data for research as the patients’ identities need to remain a secret. <a href="https://www.tcd.ie/research/start/dr-data.php" target="_blank">https://www.tcd.ie/research/start/dr-data.php</a></li>
-				  
-				  <li>Conference Speaker in the Nanoscience and Nanotechnology gathering in Spain (2018) with the intention to popularize this discipline with public engaging activities to students. <a href="https://10alamenos9.es/" target="_blank">https://10alamenos9.es/</a></li>
-				</ol>
-			</div>
+                <h2>Chapter 1: Nanotechnology</h2>
+                
+                <p>Fresh out of school, I wanted to study life sciences in University but I was unsure of which one to choose. I was a good student in school but not an excellent one, which made difficult getting into medicine in Barcelona. When trying to select the next best option, I stumbled upon Nanotechnology (what a cool name I thought!). Nanotechnology involves studying and manipulating materials at the nanoscale, combining my favourite subjects of physics, chemistry, biology, and math to create advanced technologies in various fields. I ended up enjoying this degree, and I would do it again in a heartbeat, for both the degree and the people I met along the way.</p>
+                
+                <p>The most valuable takeaway from this degree was learning to solve complex problems within interdisciplinary teams. I gained the ability to understand colleagues from diverse backgrounds, even without mastering a single discipline – just their interactions. However, I felt I lacked experience in optimizing parameters, making data-driven decisions, and working with large datasets to model outcomes.</p>
+                
+                <h2>Chapter 2: Data modelling</h2>
+                
+                <p>I decided to take a couple of classes on environmental modelling during my Erasmus in Ghent to overcome my lack of data modelling skills and … I loved it! We were able to simplify a system and even do some predictions at the click of a button. No need to process 100 samples to find a good enough reagent while wearing a lab coat or these funny plastic gloves. I was in for a treat. I rapidly start catching up with coding in R and enrolled in data modelling master’s also in Barcelona. I was the only one from Nanotechnology that had chosen this route as most of my friends decided to do material sciences, biomedicine, biotechnology or take a gap year.</p>
+                
+                <p>During my master’s thesis, I had the chance to work with one of the top Climate and Health teams at ISGlobal in Barcelona. My supervisors, Xavier Rodó and Silvia Borràs, were incredibly passionate about research, and the enthusiasm was contagious. We investigated whether the composition of air masses could be linked to a rise in Kawasaki Disease cases in Japan. That’s when it clicked – I knew I wanted to do everything I could to pursue a career in research.</p>
+                
+                <h2>Chapter 3: Computer Science</h2>
+                
+                <p>When I first applied for a PhD position in Dublin through the Marie Skłodowska-Curie Innovative Training Networks (ITN), I wasn’t sure what to expect. The first interview didn’t go well as I struggled with the statistical questions, and nerves got the best of me. I left feeling disappointed, convinced I had missed my chance. But then something unexpected happened. One of the interviewers, Declan O’Sullivan, saw potential in me and suggested I apply for another position in Dublin. This position was in health data linkage using Semantic Web technologies, a field I knew nothing about.</p>
+                
+                <p>People always say that choosing the right PhD supervisor is just as important as choosing the topic itself. I knew he was one of the good ones after having a Skype chat together. This was one of the best decisions I ever made!</p>
+                
+                <p>The ITN provided me the opportunity to work with leading research teams in the health domain: epidemiology (Climate and Health group in ISGlobal Barcelona), rare disease research (Rare Kidney Disease group in Trinity College Dublin), health data governance (European Institute for Innovation through Health Data in Belgium), health data linkage (ADAPT centre in Trinity College Dublin). Even though COVID forced us to work remotely for most of my PhD, I still enjoyed being part of a network of PhD researchers, each tackling vasculitis from a different discipline or perspective.</p>
+                
+                <h2>Chapter 4: Health Data Science</h2>
+                
+                <p>After my PhD, I joined the Human Technopole in Milan (Italy) as a postdoc, working on child and maternal health with Luisa Zuccolo’s group. In the next posts, I’ll share more about this chapter, including how I went on to secure a MSCA Postdoctoral Fellowship within a few months of joining in. </p>
+                </span>
+                <button class="expand-btn" onclick="myFunction()" id="myBtn">Read more </button>
+                <!-- <button class="expand-btn">
+                    Read more <i class="fas fa-chevron-down"></i>
+                </button> -->
+                
+                <!-- <i class="fa fa-angle-down"> -->
+            </article>
 
-		</div>
-		<!--/.Tabs-->
-		
-		
-		<p></p>
+            <div class="posts-grid">
+                <article class="post-card-dis"">
+                    <span class="post-date">February 28, 2025</span>
+                    <h3>Tips for winning an MSCA</h3>
+                    <div class="post-content">
+                        <p>I believe conducting preliminary analyses early on is fundamental to understand the feasibility of an idea (Tip #4) ...</p>
+                    </div>
+                </article>
 
-	  Contact: 
-	  <img src="" style= "color: #0d6efd" alt= "albert.navarro@fht.org">
-	  <a href="https://www.linkedin.com/in/albert-navarro-gallinad/" target="_blank" class="fa fa-linkedin"></a> 
-	  <a href="https://github.com/navarral" target="_blank"  class="fa fa-github"></a>
-	  <a href="https://orcid.org/0000-0002-2336-753X" class="fa fa-info"></a>
-      <a href="https://humantechnopole.it/it/gruppi-di-ricerca/zuccolo-group/" class="fa fa-users"></a>
+                <article class="post-card-dis">
+                    <span class="post-date">March 31, 2025</span>
+                    <h3>Research at the Human Technopole in Italy</h3>
+                    <div class="post-content">
+                        <p>I arrived at HT last June 2023 just after defending my PhD thesis in Trinity College Dublin ...</p>
+                    </div>
+                </article>
 
-	  <hr title="copyright separator">
-	  <p class="copyright"> © 2025 - Copyright: Albert Navarro-Gallinad (Last update: January 2025)  </p>
- 
-  </div>
-  
-  
+                <article class="post-card-dis">
+                    <span class="post-date">April 30, 2025</span>
+                    <h3>Conference report</h3>
+                </article>
+                
+                <article class="post-card-dis">
+                    <span class="post-date">May 31, 2025</span>
+                    <h3>Introducing the Zuccolo group</h3>
+                    <div class="post-content">
+                        <p>Comming soon...</p>
+                    </div>
+                </article>
+                
+            </div>
+            <div class="footer">
+				<hr title="copyright separator" style="top-margin: 1em;">
+				<p class="copyright"> © 2025 - Copyright: Albert Navarro-Gallinad (Last update: January 2025)</p>
+				<p class="funding-info">This project is funded by the European Union under the Marie Skłodowska-Curie Actions (MSCA) postdoctoral fellowship program.<br>
+    Grant agreement ID: <a href="https://cordis.europa.eu/project/id/101153708">101153708</a></p>
 
+            </div>
+            
+        </main>
+    </div>
+    
+    <script>
+	function myFunction() {
+	  var dots = document.getElementById("dots");
+	  var moreText = document.getElementById("more");
+	  var btnText = document.getElementById("myBtn");
+
+	  if (dots.style.display === "none") {
+		dots.style.display = "inline";
+		btnText.innerHTML = "Read more"; 
+		moreText.style.display = "none";
+	  } else {
+		dots.style.display = "none";
+		btnText.innerHTML = "Read less"; 
+		moreText.style.display = "inline";
+	  }
+	}
+   </script>
 </body>
 </html>
